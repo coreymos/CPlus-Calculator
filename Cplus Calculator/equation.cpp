@@ -9,6 +9,7 @@ Equation::Equation() : number1(0.0f), number2(0.0f), name(""), result(0.0f)
 
 void Equation::initialize()
 {
+	// Initiliazes the equation by getting number1 and number2
 	cout << "Enter the first number: ";
 	cin >> number1;
 
@@ -18,6 +19,7 @@ void Equation::initialize()
 	bool valid = false;
 	cin.ignore();
 	while (!valid) {
+		// Initializes the name variable
 		cout << "Enter an operator (+ - / *): ";
 		getline(cin, name);
 		if (name == "+" || name == "-" || name == "/" || name == "*")
@@ -36,34 +38,40 @@ void Equation::display_result()
 
 float Equation::add()
 {
+	// Adds the numbers and returns the result
 	result = number1 + number2;
 	return result;
 }
 
 float Equation::subtract()
 {
+	// Subtracts the numbers and returns the result
 	result = number1 - number2;
 	return result;
 }
 
 float Equation::divide()
 {
+	// Divides the numbers and returns the result
 	result = number1 / number2;
 	return result;
 }
 
 float Equation::multiply()
 {
+	// Multiplies the numbers and returns the result
 	result = number1 * number2;
 	return result;
 }
 
 void Equation::set_result(float new_result)
 {
+	// Sets result to the new_result
 	result = new_result;
 }
 
 void Equation::determine_result() {
+	// Determines the correct string character to display to the user
 	if (name == "+")
 		add();
 	if (name == "-")

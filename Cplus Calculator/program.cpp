@@ -20,6 +20,7 @@ int main()
 		int choice = -1;
 		bool valid = !(0 <= choice <= 5);
 
+		// Menu Interface that gets an input and does the desired action
 		cout << "Calculator Menu:\n0. Quit Program\n1. Enter an equation\n2. Display Log\n3. Clear Log\n";
 		while (!valid) {
 			cout << "Your choice: ";
@@ -42,6 +43,7 @@ int main()
 }
 
 void display_log(list<Equation>& log_history) {
+	// Iterates through the log and displays each item
 	list<Equation>::iterator it;
 	for_each(log_history.begin(), log_history.end(),
 		[](auto& math_equations) {
@@ -52,6 +54,7 @@ void display_log(list<Equation>& log_history) {
 }
 
 void add_equation(list<Equation>& log_history) {
+	// Initializes an equation object and then adds it to the log
 	Equation equation;
 	equation.initialize();
 	equation.determine_result();
@@ -59,6 +62,7 @@ void add_equation(list<Equation>& log_history) {
 }
 
 void clear_log(list<Equation>& log_history) {
+	// Clears the log
 	log_history.clear();
 	cout << "Log cleared!\n";
 }
